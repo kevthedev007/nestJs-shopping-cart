@@ -43,6 +43,8 @@ $ npm install
 $ npm run migration:run
 $ npm run start
 
+Entry Point with Swagger docs: http://localhost:3000
+
 # watch mode
 $ npm run start:dev
 
