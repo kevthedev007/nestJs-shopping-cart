@@ -8,7 +8,7 @@ const config: PostgresConnectionOptions = {
     port: parseInt(<string>process.env.PORT),
     username: process.env.USER,
     password: process.env.PASS,
-    database: process.env.DATABASE,
+    database: "shopping_cart",
     entities: ["dist/src/**/*.entity.js"],
     synchronize: false,
     migrations: [
