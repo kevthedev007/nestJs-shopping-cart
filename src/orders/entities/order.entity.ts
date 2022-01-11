@@ -10,6 +10,14 @@ export class Order {
 
     @ApiProperty()
     @Column({ type: 'real' })
+    delivery: number
+
+    @ApiProperty()
+    @Column({ type: 'real' })
+    discount: number
+
+    @ApiProperty()
+    @Column({ type: 'real' })
     total_amount: number
 
     @ApiProperty()
