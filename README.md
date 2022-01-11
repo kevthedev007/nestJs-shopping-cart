@@ -42,6 +42,8 @@ create local postgresql database "shopping_cart"
 replace enviromental variables in ormconfig.ts
 
 $ npm install
+$ npm install -g typeorm
+$ npm install -g ts-node
 $ npm run migration:run
 $ npm run start
 
