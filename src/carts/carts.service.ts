@@ -53,9 +53,6 @@ export class CartsService {
                 relations: ['product']
             })
 
-            //get product price
-            // const product = await this.productsRepository.findOne(cartItem.product)
-
             if (cartItem.quantity > 1) {
                 cartItem.quantity = cartItem.quantity - 1;
                 cartItem.total_price = cartItem.quantity * cartItem.product.price;
@@ -80,8 +77,7 @@ export class CartsService {
             cartItem.quantity = quantity.quantity;
             cartItem.total_price = cartItem.quantity * cartItem.product.price;
             return await this.cartsRepository.save(cartItem);
-            // await this.cartsRepository.update(id, quantity)
-            // return await this.cartsRepository.findOne(id)
+
         } catch (error) {
             throw new NotFoundException()
         }
