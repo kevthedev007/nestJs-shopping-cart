@@ -43,7 +43,6 @@ replace enviromental variables in ormconfig.ts
 $ npm install
 $ npm install -g typeorm
 $ npm install -g ts-node
-$ npm run build
 $ npm run db:create
 $ npm run start
 
