@@ -35,7 +35,11 @@ $ npm install
 ## Running the app
 
 ```bash
+
 # development
+create local postgresql database "shopping_cart"
+$ npm install
+$ npm run migration:run
 $ npm run start
 
 # watch mode
