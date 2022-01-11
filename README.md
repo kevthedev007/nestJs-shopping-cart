@@ -38,7 +38,9 @@ $ npm install
 
 # development
 create local postgresql database "shopping_cart"
+
 replace enviromental variables in ormconfig.ts
+
 $ npm install
 $ npm run migration:run
 $ npm run start
