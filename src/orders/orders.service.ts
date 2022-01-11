@@ -11,13 +11,14 @@ export class OrdersService {
         @InjectRepository(Cart) private cartsRepository: Repository<Cart>
     ) { }
 
-    async createOrder(): Promise<Order> {
+    async createOrder(): Promise<any> {
         const { sum } = await getRepository(Cart)
             .createQueryBuilder("cart")
             .select("SUM(cart.total_price)", "sum")
             .getRawOne()
-
-        return await this.ordersRepository.save({ total_amount: sum })
+        const items = await this.cartsRepository.find({ relations: ['product'] })
+        const orderDetails = await this.ordersRepository.save({ total_amount: sum })
+        return { orderDetails, items }
     }
 
     async findAllOrders(): Promise<Order[]> {

@@ -1,5 +1,6 @@
-import { Controller, Get, NotFoundException, Param, Post } from '@nestjs/common';
+import { Body, Controller, NotFoundException, Param, Post } from '@nestjs/common';
 import { ApiCreatedResponse, ApiNotFoundResponse, ApiTags } from '@nestjs/swagger';
+import { CreatePaymentDto } from './dtos/create-payment.dto';
 import { Payment } from './entities/payment.entity';
 import { PaymentsService } from './payments.service';
 
@@ -10,11 +11,11 @@ export class PaymentsController {
 
   @ApiCreatedResponse({ type: Payment })
   @ApiNotFoundResponse()
-  @Get(':orderId')
-  payment(@Param('orderId') orderId: number): Promise<Payment> {
+  @Post(':orderId')
+  payment(@Param('orderId') orderId: number, @Body() shipping_address: CreatePaymentDto): Promise<Payment> {
     if (!orderId) {
       throw new NotFoundException()
     }
-    return this.paymentsService.payment(orderId)
+    return this.paymentsService.payment(orderId, shipping_address)
   }
 }

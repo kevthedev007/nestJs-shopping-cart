@@ -23,6 +23,10 @@ export class Product {
   color: string;
 
   @ApiProperty()
+  @Column()
+  image_src: string;
+
+  @ApiProperty()
   @Column({ type: 'real' })
   price: number;
 

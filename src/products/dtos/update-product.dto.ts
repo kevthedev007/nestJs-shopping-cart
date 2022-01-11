@@ -23,6 +23,11 @@ export class UpdateProductDto {
 
     @ApiProperty({ required: false })
     @IsOptional()
+    @IsString()
+    image_src?: string;
+
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsNumber()
     price?: number;
 }

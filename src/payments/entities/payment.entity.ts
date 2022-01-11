@@ -12,6 +12,10 @@ export class Payment {
     @Column({ type: 'real' })
     price: number;
 
+    @ApiProperty()
+    @Column()
+    shipping_address: string
+
     @Column()
     orderId: number;
 
